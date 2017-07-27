@@ -1,0 +1,3 @@
+﻿19/07/2017 : Hoàn thành chức năng đếm số người truy cập web, Hoành thành cấu hình debug.log;
+22/07/2017 : Hoàn thành model, repository, tạo URL engine;
+27/07/2017 : Đưa project lên github, trỉnh column type descripbe sang text, chỉnh sửa một chút frontend 
