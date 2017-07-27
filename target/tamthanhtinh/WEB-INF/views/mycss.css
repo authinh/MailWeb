@@ -1,0 +1,208 @@
+ .block-wrap-edges .block .block-content {
+	z-index: 100
+}
+
+ .block-group-wrap-ver2 {
+	width: 100%;
+	margin: 0 auto
+}
+
+ .block-group-wrap-ver2 {
+	margin-top: 5em
+}
+
+ .block-wrap-edges {
+	max-width: 1400px;
+	margin: 0 auto
+}
+
+ .block-wrap-edges .block-wrap-all {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap
+}
+
+ .block-wrap-edges .block-padding {
+	margin-right: 23px;
+	padding: 20px 0
+}
+
+ .block-wrap-edges .title {
+	color: #fff;
+	font-size: 2.2em;
+	font-weight: 300;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 20px
+}
+
+ .block-wrap-edges .arrow {
+	width: 30px;
+	height: 30px;
+	background-size: 30px 30px;
+	background-image: url('/images/meditate/arrow.png');
+	transition: all .2s ease-in-out;
+	cursor: pointer
+}
+
+ .block-wrap-edges .arrow:hover {
+	opacity: .8
+}
+
+ .block-wrap-edges .left-arrow {
+	-webkit-transform: scale(-1, -1);
+	transform: scale(-1, -1);
+	margin-right: 10px
+}
+
+ .block-wrap-edges .disabled {
+	opacity: .8;
+	cursor: auto;
+	pointer-events: none
+}
+
+ .block-wrap-edges .metaWrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	justifyContent: space-between;
+	margin-bottom: 30px
+}
+
+ .block-wrap-edges .controls {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex
+}
+
+ .block-wrap-edges .block {
+	width: 255px;
+	border-radius: 4px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	cursor: pointer;
+	background-size: cover;
+	transition: all .4s cubic-bezier(.165, .84, .44, 1);
+	line-height: 1.5em
+}
+
+ .block-wrap-edges .block:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1)
+}
+
+ .block-wrap-edges .block .pad {
+	padding: 2.5em;
+	z-index: 100
+}
+
+ .block-wrap-edges .block .block-gradient-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-image: linear-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .8) 100%)
+}
+
+ .block-wrap-edges .block .badge {
+	position: absolute;
+	top: 1.3em;
+	right: 1.3em;
+	width: 15px;
+	height: 20px
+}
+
+ .block-wrap-edges .block .locked-icon {
+	background-size: 15px 20px;
+	background-image: url('/images/meditate/lock.png')
+}
+
+ .block-wrap-edges .block .title {
+	color: #fff;
+	font-size: 1.3em;
+	font-weight: 500;
+	margin-top: 2em
+}
+
+ .block-wrap-edges .block .subtitle {
+	margin-top: .8em;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 300;
+	height: 3em;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+ .block-wrap-edges .block .icon {
+	width: 50px;
+	border-radius: 0
+}
+
+ .block-wrap-edges .block .icon.sleep {
+	border-radius: 25px
+}
+
+ .block-wrap-edges .block .diplaying {
+	display: block
+}
+
+ .block-wrap-edges .block .free-text {
+	text-transform: uppercase;
+	text-align: right;
+	color: #fff;
+	width: 60px
+}
+
+@media only screen and (max-width:750px) {
+	 .block-wrap-edges .block {
+		width: 220px;
+		font-size: 14px
+	}
+	 .block-wrap-edges .block-padding {
+		margin-right: 16px;
+		padding: 14px 0
+	}
+}
+
+@media only screen and (max-width:529px) {
+	 .block-wrap-edges .block-wrap-all {
+		margin-left: -2%;
+		margin-right: -2%
+	}
+	 .block-wrap-edges .block-padding {
+		padding: 0;
+		margin-top: 1.5em;
+		width: 46%;
+		margin-left: 2%;
+		margin-right: 2%
+	}
+	 .block-wrap-edges .block {
+		width: 100%
+	}
+	 .block-wrap-edges .block .pad {
+		padding: 1em
+	}
+	 .block-wrap-edges .block .icon {
+		width: 36px
+	}
+	 .block-wrap-edges .block .title {
+		font-size: 1.2em;
+		margin-top: .5em
+	}
+}
