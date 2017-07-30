@@ -13,10 +13,11 @@ import com.web.tamthanhtinh.model.Category;
 import com.web.tamthanhtinh.model.CategoryAlbum;
 import com.web.tamthanhtinh.repository.AlbumsReposity;
 import com.web.tamthanhtinh.repository.CategoryAlbumReposity;
+import com.web.tamthanhtinh.service.serviceinterface.AlbumService;
 
-@Service
+@Service()
 @Transactional
-public class AlbumsServiceImpl implements IService<Albums, Integer>,ISelectObjectByID<Albums, Integer>{
+public class AlbumsServiceImpl implements AlbumService{
 
 	private final AlbumsReposity albumsReposity;
 	private final CategoryAlbumReposity categoryAlbumReposity;

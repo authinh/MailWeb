@@ -9,10 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.web.tamthanhtinh.model.Category;
 import com.web.tamthanhtinh.repository.CategoryReposity;
 import com.web.tamthanhtinh.repository.SessionRepository;
+import com.web.tamthanhtinh.service.serviceinterface.CategoryService;
 
-@Service
+@Service("CategoryServiseImpl")
 @Transactional
-public class CategoryServiseImpl implements IService<Category, Integer> {
+public class CategoryServiseImpl implements CategoryService {
 
 	@Autowired
 	private final CategoryReposity categoryReposity;

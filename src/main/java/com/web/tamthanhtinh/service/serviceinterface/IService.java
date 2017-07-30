@@ -1,5 +1,5 @@
 
-package com.web.tamthanhtinh.service;
+package com.web.tamthanhtinh.service.serviceinterface;
 
 import java.util.List;
 

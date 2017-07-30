@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.web.tamthanhtinh.model.CategoryAlbum;
 import com.web.tamthanhtinh.repository.CategoryAlbumReposity;
+import com.web.tamthanhtinh.service.serviceinterface.CategoryAlbumService;
 
-@Service
+@Service("CategoryAlbumServiceImpl")
 @Transactional
-public class CategoryAlbumServiceImpl implements IService<CategoryAlbum, Integer>{
+public class CategoryAlbumServiceImpl implements CategoryAlbumService{
 
 	private final CategoryAlbumReposity CategoryAlbumReposity;
 	

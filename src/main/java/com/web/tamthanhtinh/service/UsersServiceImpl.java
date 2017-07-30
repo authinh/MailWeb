@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.web.tamthanhtinh.model.Users;
 import com.web.tamthanhtinh.repository.UsersReposity;
+import com.web.tamthanhtinh.service.serviceinterface.UsersService;
 
-@Service
+@Service("UsersServiceImpl")
 @Transactional
-public class UsersServiceImpl implements IService<Users, Integer>{
+public class UsersServiceImpl implements UsersService{
 
 	private final UsersReposity UsersReposity;
 	

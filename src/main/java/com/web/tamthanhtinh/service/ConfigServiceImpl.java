@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.web.tamthanhtinh.model.Config;
 import com.web.tamthanhtinh.repository.ConfigReposity;
+import com.web.tamthanhtinh.service.serviceinterface.ConfigService;
 
-@Service
+@Service("ConfigServiceImpl")
 @Transactional
-public class ConfigServiceImpl implements IService<Config, Integer>{
+public class ConfigServiceImpl implements ConfigService{
 
 	private final ConfigReposity ConfigReposity;
 	

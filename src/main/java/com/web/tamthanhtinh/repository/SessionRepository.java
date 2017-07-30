@@ -7,7 +7,7 @@ import com.web.tamthanhtinh.model.Sessions;
 
 
 
-//@Repository
+@Repository
 public interface SessionRepository extends CrudRepository<Sessions, String>{
 	
 }

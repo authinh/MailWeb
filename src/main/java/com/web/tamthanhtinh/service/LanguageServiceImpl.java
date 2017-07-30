@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.web.tamthanhtinh.model.Language;
 import com.web.tamthanhtinh.repository.LanguageReposity;
+import com.web.tamthanhtinh.service.serviceinterface.LanguageService;
 
-@Service
+@Service("LanguageServiceImpl")
 @Transactional
-public class LanguageServiceImpl implements IService<Language, Integer>{
+public class LanguageServiceImpl implements LanguageService{
 
 	private final LanguageReposity LanguageReposity;
 	

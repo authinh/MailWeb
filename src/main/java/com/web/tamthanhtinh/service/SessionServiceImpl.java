@@ -5,18 +5,19 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 
 import com.web.tamthanhtinh.model.Sessions;
 import com.web.tamthanhtinh.repository.SessionRepository;
-import com.web.tamthanhtinh.service.IService;
+import com.web.tamthanhtinh.service.serviceinterface.SessionService;
 
 
 
-@Service()
+@Service("SessionServiceImpl")
 @Transactional
-public class SessionServiceImpl implements IService<Sessions,String> {
+public class SessionServiceImpl implements SessionService {
 
 	 	@Autowired
 	    private final SessionRepository sessionRepository;

@@ -17,23 +17,28 @@ import com.web.tamthanhtinh.engine.FacadeEngine;
 import com.web.tamthanhtinh.model.Albums;
 import com.web.tamthanhtinh.model.Category;
 import com.web.tamthanhtinh.model.CategoryAlbum;
+import com.web.tamthanhtinh.model.Musics;
 import com.web.tamthanhtinh.model.Sessions;
 import com.web.tamthanhtinh.service.AlbumsServiceImpl;
 import com.web.tamthanhtinh.service.CategoryServiseImpl;
-import com.web.tamthanhtinh.service.ISelectObjectByID;
-import com.web.tamthanhtinh.service.IService;
+import com.web.tamthanhtinh.service.serviceinterface.AlbumService;
+import com.web.tamthanhtinh.service.serviceinterface.CategoryService;
+import com.web.tamthanhtinh.service.serviceinterface.MusicsService;
+import com.web.tamthanhtinh.service.serviceinterface.SessionService;
 
 @Controller
 public class AppController {
 
-	Logger logger = LoggerFactory.getLogger(AppController.class);
+	static public final Logger logger = LoggerFactory.getLogger(AppController.class);
 
 	@Autowired
-	private IService<Sessions, String> sessionService;
+	private SessionService sessionService;
 	@Autowired
-	private IService<Category, Integer> categoryServise;
+	private CategoryService categoryServise;
 	@Autowired
-	private ISelectObjectByID<Albums, Integer> albumService;
+	private AlbumService albumService;
+	@Autowired
+	private MusicsService MusicService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
@@ -76,8 +81,8 @@ public class AppController {
 			sessions.setId(sessionCurrent);
 			sessions.setOnlTime(new Date());
 			sessions.setUserID(null);
-
-			sessionService.save(sessions);
+			// save session into database. this line comment for issue
+			//sessionService.save(sessions);
 
 			return "redirect:" + URL;
 

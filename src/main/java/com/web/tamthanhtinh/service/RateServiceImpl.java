@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.web.tamthanhtinh.model.Rate;
 import com.web.tamthanhtinh.repository.RateReposity;
+import com.web.tamthanhtinh.service.serviceinterface.RateService;
 
-@Service
+@Service("RateServiceImpl")
 @Transactional
-public class RateServiceImpl implements IService<Rate, Integer>{
+public class RateServiceImpl implements RateService{
 
 	private final RateReposity RateReposity;
 	

@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.web.tamthanhtinh.model.Musics;
 import com.web.tamthanhtinh.repository.MusicsReposity;
+import com.web.tamthanhtinh.service.serviceinterface.MusicsService;
 
-@Service
+@Service("MusicsServiceImpl")
 @Transactional
-public class MusicsServiceImpl implements IService<Musics, Integer>{
+public class MusicsServiceImpl implements MusicsService{
 
 	private final MusicsReposity MusicsReposity;
 	

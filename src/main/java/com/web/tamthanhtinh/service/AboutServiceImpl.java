@@ -9,8 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.web.tamthanhtinh.model.About;
 import com.web.tamthanhtinh.repository.AboutReposity;
+import com.web.tamthanhtinh.service.serviceinterface.IService;
 
-@Service
+@Service("AboutServiceImpl")
 @Transactional
 public class AboutServiceImpl implements IService<About, Integer>{
 

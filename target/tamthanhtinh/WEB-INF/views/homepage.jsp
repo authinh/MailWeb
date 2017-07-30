@@ -14,8 +14,8 @@
 
 <!-- About -->
 <section id="about" class="about">
-	<div class="white-circle" ></div>
-	<div class="container">		
+	<div class="white-circle"></div>
+	<div class="container">
 		<!-- Team Members Row -->
 		<div class="row">
 			<div class="col-lg-12">
@@ -24,14 +24,14 @@
 
 			<c:forEach items="${categorys}" var="category">
 				<a href="#${category.name}">
-					<div class="col-lg-2  text-center slidehidden">
+					<div class="col-lg-2  text-center slidehidden">
 						<img class="img-circle img-responsive img-center"
 							src="${category.backgroundURL}" alt="${category.title}"
 							style="width: 200px; height: 170px;">
 						<h3>${category.title}
 							<small>Job Title</small>
 						</h3>
-						
+
 					</div>
 				</a>
 			</c:forEach>
@@ -44,9 +44,9 @@
 
 <!-- Category -->
 <!-- shơw all category -->
-<c:set var = "bool"  value = "1"/>
+<c:set scope="request" var="boole" value="1" />
 <c:forEach items="${categorys}" var="category">
-	<style>
+<style>
 		.${category.name}{ 
 		height: 500px;
  		background: url(${category.backgroundURL}) no-repeat center center scroll; */
@@ -56,31 +56,24 @@
  		-o-background-size: cover; 
  	} 
 </style>
+
 	<section id="${category.name}" class="${category.name}">
-	<div width="100%" height="100%">
-		<div class="container">
-			<!-- Team Members Row -->
-			<div class="row">
-			<c:if test = "${bool == 1}">
-			
-				<div class="col-lg-6">
+		<div width="100%" height="100%">
+			<div class="container">
+				<!-- Team Members Row -->
+				<div class="row">
+				<c:if test="${boole == 1}"><div class="col-lg-6"></div></c:if>
+				<c:set scope="request" var="boole" value="${boole*(-1)}" />	
 					
+					<div class="col-lg-6">
+					
+						<h2 class="page-header">${category.title}</h2>
+						<p>${category.description}
+						<p>
+					</div>
 				</div>
-			</c:if>
-				<div class="col-lg-6">
-					<h2 class="page-header">${category.title}</h2>
-					<p>${category.description}<p>
-				</div>
-			<c:if test = "${bool == 1}">
-				<div class="col-lg-6">					
-				</div>
-				
-			</c:if>	
-			<c:set var = "bool"  value = "${bool*(-1)}"/>
-			
 			</div>
 		</div>
-	</div>
 		<!-- /.container -->
 	</section>
 </c:forEach>

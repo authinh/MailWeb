@@ -23,9 +23,7 @@ import com.web.tamthanhtinh.service.*;
 
 
 public class LoggingInterceptor implements HandlerInterceptor {
-		
-	@Autowired
-	private IService<Sessions,String> sessionService;
+
 	static final Logger logger = LoggerFactory.getLogger(LoggingInterceptor.class);
 	
 	@Override
