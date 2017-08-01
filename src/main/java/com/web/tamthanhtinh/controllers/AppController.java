@@ -1,6 +1,8 @@
 package com.web.tamthanhtinh.controllers;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,12 +19,14 @@ import com.web.tamthanhtinh.engine.FacadeEngine;
 import com.web.tamthanhtinh.model.Albums;
 import com.web.tamthanhtinh.model.Category;
 import com.web.tamthanhtinh.model.CategoryAlbum;
+import com.web.tamthanhtinh.model.MusicAlbum;
 import com.web.tamthanhtinh.model.Musics;
 import com.web.tamthanhtinh.model.Sessions;
 import com.web.tamthanhtinh.service.AlbumsServiceImpl;
 import com.web.tamthanhtinh.service.CategoryServiseImpl;
 import com.web.tamthanhtinh.service.serviceinterface.AlbumService;
 import com.web.tamthanhtinh.service.serviceinterface.CategoryService;
+import com.web.tamthanhtinh.service.serviceinterface.MusicAlbumService;
 import com.web.tamthanhtinh.service.serviceinterface.MusicsService;
 import com.web.tamthanhtinh.service.serviceinterface.SessionService;
 
@@ -38,7 +42,7 @@ public class AppController {
 	@Autowired
 	private AlbumService albumService;
 	@Autowired
-	private MusicsService MusicService;
+	private MusicAlbumService musicAlbumService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
@@ -66,6 +70,56 @@ public class AppController {
 		model.addAttribute("background", category.getBackgroundURL());
 		model.addAttribute("getContainer", FacadeEngine.getHtmlbyURL("categorypage?categoryID="+categoryID));
 		return "webpage";
+
+	}
+	
+	@RequestMapping(value = "/description", method = RequestMethod.GET)
+	public String description(ModelMap model, @RequestParam("albumID") String albumID)  {
+		logger.debug("maping requestmaping: / ");
+		
+		// get html by url
+		getCommonJSP(model);
+		model.addAttribute("getContainer", FacadeEngine.getHtmlbyURL("descriptionpage?albumID="+albumID));
+		return "webpage";
+
+	}
+	
+	@RequestMapping(value = "/player", method = RequestMethod.GET)
+	public String player(ModelMap model, @RequestParam("albumID") String albumID)  {
+		String url = "error";
+		
+		try {
+			int id = Integer.parseInt(albumID);
+			Albums album = new Albums();
+			album.setId(id);
+			Iterable<MusicAlbum> listMusicAlbum = musicAlbumService.findByAlbum(album);
+			List<Musics> listMusic = new ArrayList<Musics>();
+			for (MusicAlbum musicAlbum : listMusicAlbum) {
+				listMusic.add(musicAlbum.getMusic());
+			}
+
+			if (listMusic.size()>1){
+				url = "listplayer";
+				// need to edit in the futer
+			} else{
+				url =  "player";
+				model.addAttribute("music",listMusic.get(0));
+			}
+			logger.debug("listMusic.size():"+listMusic.size());
+			
+
+		} catch (NumberFormatException e) {
+			model.addAttribute("error", "NumberFormatException");
+			url = "error";
+		} catch (Exception e) {
+			model.addAttribute("error", "error form alumid:" +albumID);
+			url = "error";
+		} finally {
+			return url;
+		}
+		// get html by url
+		
+		
 
 	}
 
@@ -111,6 +165,27 @@ public class AppController {
 	public String head(ModelMap model) {
 
 		return "head";
+
+	}
+	
+	@RequestMapping(value = "/descriptionpage", method = RequestMethod.GET)
+	public String descriptionpage(ModelMap model,@RequestParam("albumID") String albumID) {
+
+		String url = "description";
+		getCommonJSP(model);
+		try {
+			int id = Integer.parseInt(albumID);
+			model.addAttribute("album", albumService.findOne(id));
+			
+		} catch (NumberFormatException e) {
+			model.addAttribute("error", "NumberFormatException");
+			url = "error";
+		} catch (Exception e) {
+			model.addAttribute("error", albumID);
+			url = "error";
+		} finally {
+			return url;
+		}
 
 	}
 	

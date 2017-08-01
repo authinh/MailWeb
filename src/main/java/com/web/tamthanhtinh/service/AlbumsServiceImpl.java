@@ -45,7 +45,7 @@ public class AlbumsServiceImpl implements AlbumService{
 	@Override
 	public Albums findOne(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return albumsReposity.findOne(id);
 	}
 
 	@Override

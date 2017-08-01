@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.web.tamthanhtinh.model.Albums;
 import com.web.tamthanhtinh.model.MusicAlbum;
 import com.web.tamthanhtinh.repository.MusicAlbumReposity;
 import com.web.tamthanhtinh.service.serviceinterface.MusicAlbumService;
@@ -51,6 +52,12 @@ public class MusicAlbumServiceImpl implements MusicAlbumService{
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<MusicAlbum> findByAlbum(Albums album) {
+		// TODO Auto-generated method stub
+		return musicAlbumReposity.findByAlbum(album);
 	}
 
 }

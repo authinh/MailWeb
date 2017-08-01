@@ -7,10 +7,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Calm</title>
       <!-- tạo icon -->
-      <link rel="icon" type="image/png" href="../../resources/img/logo.jpg">
-      <link rel="stylesheet" href="../../resources/css/meditate.css">
+      <link rel="icon" type="image/png" href="resources/img/logo.jpg">
+      <link rel="stylesheet" href="resources/css/meditate.css">
       
-      <link rel="stylesheet" href="../../resources/css/font-awesome.min.css">
+      <link rel="stylesheet" href="resources/css/font-awesome.min.css">
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 
@@ -21,10 +21,10 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
       <script>var globalDeviceId = "c410dfa4-8b2f-4471-bb12-b67e021103b2";
-      		var URLSong = "../../../resources/music/duanhauditron.mp3";
+      		var URLSong = "${music.}";
       </script>
        
-      <script type="text/javascript" src="../../resources/js/myjavascript.js"> </script> 
+      <script type="text/javascript" src="resources/js/myjavascript.js"> </script> 
       
       <!-- player mp3 ở đây -->
       <script>var globalRootProps = {"route":"/player/BL11yVDlM?return_to=%2Fmeditate","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0","isMobile":false,"timezone":"Asia/Bangkok","sceneId":"S38pOgKsfM","sceneVolume":1};</script> 
@@ -43,7 +43,7 @@
                      <div data-reactid="6">
                         <div id="session-player" data-reactid="7">
                           <!-- set nhạc -->
-                           <!--<audio autoplay="autoplay" src="../../resources/js/Sleep_Story_Intro_Final_Fireplaceonly.m4a" data-reactid="8"></audio>-->
+                           <!--<audio autoplay="autoplay" src="resources/js/Sleep_Story_Intro_Final_Fireplaceonly.m4a" data-reactid="8"></audio>-->
                            <div class="controls" data-reactid="9">
                               <div class="pause ic c ic-pause" data-reactid="10"> </div>
                               <div class="wheel with-border" data-reactid="11">
@@ -65,7 +65,7 @@
             </div>
          </div>
       </div>
-      <script src="../../resources/js/meditate.js"></script>
+      <script src="resources/js/meditate.js"></script>
    </body>
 </html>
 
