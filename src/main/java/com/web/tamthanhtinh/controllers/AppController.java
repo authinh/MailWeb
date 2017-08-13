@@ -99,6 +99,8 @@ public class AppController {
 			}
 
 			if (listMusic.size()>1){
+				model.addAttribute("music",FacadeEngine.getHtmlbyURL("api/listaudio?albumID="+albumID));
+				
 				url = "listplayer";
 				// need to edit in the futer
 			} else{

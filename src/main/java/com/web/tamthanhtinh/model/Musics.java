@@ -167,6 +167,15 @@ public class Musics implements Serializable{
 	public void setUserby(Users userby) {
 		this.userby = userby;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Musics [id=" + id + ", name=" + name + ", title=" + title + ", singer=" + singer + ", author=" + author
+				+ ", link=" + link + ", active=" + active + ", size=" + size + ", userby=" + userby + ", bitRate="
+				+ bitRate + ", dateUp=" + dateUp + "]";
+	}
 	
 	
 }

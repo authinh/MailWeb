@@ -40,10 +40,12 @@ public class LoggingInterceptor implements HandlerInterceptor {
 			StringBuilder URL = new StringBuilder(request.getRequestURI().replace("/tamthanhtinh", ""));
 			System.out.println("URL: "+ URL+getAllParam(request));
 			URL.append(getAllParam(request));
-			response.sendRedirect("countviews?sessionCurrent="+sessionCurrent
-									+"&URL="+URL);
+			
+			//response.sendRedirect("countviews?sessionCurrent="+sessionCurrent
+			//						+"&URL="+URL);
 			logger.debug("=======> day la logger");
-			return false;
+			//return false;
+			return true;
 		}
 		
 		

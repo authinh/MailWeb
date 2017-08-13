@@ -6,6 +6,7 @@
 /home/authinh/Documents/workspace/repo/src/main/java/com/web/tamthanhtinh/service/LanguageServiceImpl.java
 /home/authinh/Documents/workspace/repo/src/main/java/com/web/tamthanhtinh/service/MusicsServiceImpl.java
 /home/authinh/Documents/workspace/repo/src/main/java/com/web/tamthanhtinh/controllers/AdminController.java
+/home/authinh/Documents/workspace/repo/src/main/java/com/web/tamthanhtinh/controllers/MyRestController.java
 /home/authinh/Documents/workspace/repo/src/main/java/com/web/tamthanhtinh/service/serviceinterface/ConfigService.java
 /home/authinh/Documents/workspace/repo/src/main/java/com/web/tamthanhtinh/service/PersonServiceImpl.java
 /home/authinh/Documents/workspace/repo/src/main/java/com/web/tamthanhtinh/engine/FacadeEngine.java
