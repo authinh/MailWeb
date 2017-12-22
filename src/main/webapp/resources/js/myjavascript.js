@@ -1,71 +1,22 @@
-	var globalModels = {
-		"scenes": [{
-			"id": "S38pOgKsfM",
-			"title": "Mountain Lake",
-			"free": true,
-			"bundle_size": 9025077,
-			"bundle": "http://cdn.calm.com/Sw8W7sN5Iz64_CedXZvv9lFfzwBIMqdHlPlVzktP.zip",
-			"image": "http://cdn.calm.com/images/scene-bg-Qqkzy9k7Eo.jpg?v=1486404656264",
-			"audio": "http://cdn.calm.com/scenes/scene-Qqkzy9k7Eo.m4a?v=1418162240715",
-			"video": "http://cdn.calm.com/scenes/scene-Qqkzy9k7Eo.mp4?v=1418162238190",
-			"thumbnail": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAPTGF2YzU2LjYwLjEwMP/bAEMAAwICAwICAwMDAwQDAwQFCAUFBAQFCgcHBggMCgwMCwoLCw0OEhANDhEOCwsQFhARExQVFRUMDxcYFhQYEhQVFP/bAEMBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIACQAQAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAABwUGCAMBBP/EADIQAAEDAwMBBQYGAwAAAAAAAAECAwQABQYREiEHCBMUMTIiI0FRU3EkM0JDYWJjgZH/xAAYAQEBAQEBAAAAAAAAAAAAAAAFBgcECP/EACMRAAICAQQCAgMAAAAAAAAAAAEDAAQFAgYRMxMjFCIkMlH/2gAMAwEAAhEDEQA/AMbY9FWlLbjPt6fppwYtlkdvuGZzSgn07tPKlTjIVGdTu1SPj96YaHIrjSdCndR+N3Fcw7fx9ckbuKr3l+Nkedqw5m7xUyIxS6hXIKPhUqx07USPdnWlr04zp7EpTbiFl2KVe20ryrV+KZniN/sq7gqY1F7pG51Dh0I+1bnjt7purB1fvMwu7ZsVmer76Ir4nToj9s1NQ+n51A2VWOpHags2PPONWJluWU8b1fGk+e2NkVvvPjFoZMbTTw+3ikmbjJE417de2aii9OS4Pyz/AMquZjYbLjjWt0mx4Y/yLANZzyvt8ZTMiqZtsZiJqNN6RzWaM86pZDnM9yTdLi/IcUddCo6D/VT7dztV1xmltDWw+0y92l1ClAedWVlnQBW3QfelzZsjYinetJNTa8873QNs8V54+K1zPWJsnxwOyMi2PNDagaFRPlrT7wDpc3e8akyJa+4cUj3bZXpurMONZjEtixIkoQt3zSn5Ve2u0G+ygIbc2JHAANabiMEAvyWGcSUvXCvX4q65C9S8Zdxqe6h6GlPJ0KaVk8svu7BGC1fLQ05ZvWCLfU7Zzbb5/sNa4Qb9jiZ6JXgWSsDy04qoZjgetkOXZKuxcQly2Qwd1vAH8pNVuXPjAn8KgVsU3jFL0yUSLZH5HmAKU2c9JrJcZK5FtfTHQee7HNHWMO89ZiVbI6B2RJsqOo5qRS8sAc0UVL44CUFwmeGY7r6q5eNe19Zooqh5MM4nVm4yAfXUnFusn6hoorrUTzOcgSUiXqWDw6a+129zPrGiimAT/YfwOZ//2Q=="
-		}],
-		"program": {
-			"id": "ZRPAmzj",
-			"variantId": "1pZZeKNE9",
-			"title": "What is a Sleep Story?",
-			"isFree": true,
-			"meditationType": "sleep",
-			"iconURL": "http://cdn.calm.com/images/ZRPAmzj/1pZZeKNE9/program-ic-ZRPAmzj.png?v=1486455532392",
-			"backgroundImageURL": "http://cdn.calm.com/images/ZRPAmzj/1pZZeKNE9/program-bg-ZRPAmzj.jpg?v=1486456185827",
-			"cellBackgroundImage": "http://cdn.calm.com/images/ZRPAmzj/1pZZeKNE9/program-cell-ZRPAmzj.jpg?v=1486457446100",
-			"sequential": false,
-			"description": "An introduction to Sleep Stories, narrated by Alan Sklar",
-			"position": 89,
-			"isNew": false,
-			"guides": [{
-				"id": "BL11yVDlM",
-				"variantId": "BL11yVDlM",
-				"title": "What is a Sleep Story?",
-				"audioURL": this.URLSong,
-				//"audioURL": "player_files/duanhauditron.mp3",
-				"fileSize": 2680979,
-				"fingerprint": "3177acee2a4a32e368523dc161876221",
-				"duration": 188,
-				"positionInProgram": 1,
-				"free": true
-			}],
-			"statsRequest": {
-				"endpoint": "/stats/programs/ZRPAmzj",
-				"method": "GET",
-				"state": "SUCCEEDED",
-				"apiHeaders": {
-					"x-device-info": "www/c410dfa4-8b2f-4471-bb12-b67e021103b2",
-					"x-client-timezone": "Asia/Bangkok",
-					"x-session-token": "3Pj4LewUs7x+zqtNkqapEn9LfJY"
-				}
-			},
-			"statsProgress": 0
-		}
-	};
-	
 $(document).ready(function(){
+  $('#sendMail').click(function(){
+    var mailTemplate={
+      contactList: [],
+      subject:"",
+      content:""
+    };
+     $('.badgebox').each(function(){
+       if($(this).is(":checked")){
+          //alert($(this).next().val());
+          mailTemplate.contactList.push($(this).next().val()); 
+       }
+     });
+    mailTemplate.subject = $('#subject').val();
+    mailTemplate.content = $('#content').val();
     
-        $.get("/header", function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
-            $("#header").text(data);
-        });
-    
-});
-
-$(window).scroll(function() {
-  $(".slidehidden").each(function(){
-    var pos = $(this).offset().top;
-
-    var winTop = $(window).scrollTop();
-    if (pos < winTop + 600) {
-      $(this).addClass("slide");
-    }
+    $.post("demo_test_post.asp",mailTemplate,
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
   });
 });
-
